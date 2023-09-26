@@ -1,0 +1,33 @@
+<html>
+    <head>
+       
+        <form>
+            <label>
+                <input type="text" id="t" /> enter the number 
+            </label><br>
+            <label>
+                <input type="text" id="y" />
+            </label><br>
+            
+            <input type="button"  value="calculate" onclick="fun();"/>
+        </form>
+    </head>
+   
+    <body>
+        <script lang="javascript">
+            function fun()
+            {
+                var n=document.getElementById("t").value;
+                var i,fact=1;
+                //document.write("hj");
+                for(i=1;i<=n;i++)
+                {
+                    fact=fact*i;
+                }
+                document.getElementById("y").value=fact;
+                documentt.write(fact);
+            }
+        </script>          
+   
+    </body>
+</html>

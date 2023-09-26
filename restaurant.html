@@ -1,0 +1,101 @@
+<html>
+<head>
+    <h1>restaurant menu</h1>
+    <script type=""text/javascript">
+    function calbill()
+    {
+        var starter=document.getElementById("stater");
+        var main=document.getElementById("main");
+        var dessert=document.getElementById("dessert");
+        selecteditems="item \t\t\t price \n......\n";
+        var totalbill=0;
+        
+        for(var i=0;i<starter.options.length;i++)
+        {
+            var option=stater.options[i];
+            if(option.selected==true)
+            {
+                price=parseInt(option,value);
+                totalbill=totalbill+price;
+                slecteditems=selecteditems+option.text+"\t\t"+price+"\n";
+            }
+        }
+        for(var i=0;i<main.options.length;i++)
+        {
+            var option=main.options[i];
+            if(option.selected==true)
+            {
+                price=parseInt(option.value);
+                totalbill=totalbill+price;
+                slecteditems=selecteditems+option.text+"\t\t"+price+"\n";
+            }
+        }
+        for(var i=0;i<dessert.options.length;i++)
+        {
+            var option=dessert.options[i];
+            if(option.selected==true)
+            {
+                price=parseInt(option.value);
+                totalbill=totalbill+price;
+                selecteditems=selecteditems+option.text+"\t\t"+price+"\n";
+            }
+        }
+
+        selecteditems=selecteditems+"\n\n totalbill \t\t"+totalbill;
+        document.ge
+        ElementById("oreder").value=selecteditems;
+    }  
+</script>
+</head>
+<body>
+<form>
+    <table boreder="10>
+        <tr>
+            <th clospan=2 align="center">
+            <h2>restaurant menu </h2></th>
+        </tr>
+
+        <tr>
+        <td>starter dishes</td>
+        <td> <select multiple id="starter", size=3>
+                <option  value="80">gobi manchuri </option>
+                <option  value="70">masala puri</option>
+                <option value="50">soup</option>
+             </select>
+        </td>
+        </tr>
+
+        <tr>
+        <td>main dishes</td>
+        <td><select id="main", size=3>
+              <option  value="80">gobi manchuri </option>
+              <option  value="70">masala puri</option>
+              <option value="50">soup</option>
+            </select>
+        </td>
+        </tr>
+
+        <tr>
+        <td>dessert dishes</td>
+        <td><select id="dessert", size=3>
+             <option  value="80">gobi manchuri </option>
+             <option  value="70">masala puri</option>
+             <option value="50">soup</option>
+             </select>
+        </td>
+        </tr>
+
+        <tr>
+        <td colspan=2 align="center">
+        <textarea id="order" row=10 cols=40> </textarea>
+        </td>
+        </tr>
+
+        <tr>
+        <td><input type="button" value="calculate bill" onclick="calbill()"/></td>
+        <td><input type="reset" value="clear"/> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
